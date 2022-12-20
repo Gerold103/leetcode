@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package fibonacci;
+
+service Store {
+  rpc Calculate (stream Request) returns (stream Response) {}
+}
+
+message Request {
+  uint32 n = 1;
+}
+
+message Response {
+  uint64 fib = 1;
+  uint64 timestamp = 2;
+  uint64 count = 3;
+}
